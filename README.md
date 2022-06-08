@@ -10,3 +10,15 @@ Este HAL tendría como objetivos:
   - Reducir la curva de aprendizaje del HAL, tratando de hacer mas intuitivo su uso.
 
 Se deja de lado el interés por unificar las APIS para la inicialización de periféricos a traves de toda la familia STM32. Este objetivo complicaría los anteriores, y además lo mas productivo para esta tarea es utilizar un generador de código a partir de un configurador visual, como el STM32Cube. Sin embargo conviene que el código generado resulte legible y conciso.
+
+Compilado con las opciones: 
+   -std=gnu++20 -Os 
+
+resulta un binario que ocupa 700 bytes. De los cuales 576 son debidos a la rutina: startup.s.
+
+Un programa similar con STM32-HAL ocupa 6,66kB.
+
+Comparando: (700-576)/(6660-576) = 0.020. ~ 1/50 WTF!
+
+
+
